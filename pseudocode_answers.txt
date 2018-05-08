@@ -1,0 +1,39 @@
+Short Answer
+
+1. Programmers use pseudocode to help brainstorm algorithms before actually typing it out in actual code. 
+It helps to write the algorithm out in a way that is more understandable before figuring out how to create
+ the code equivalent. 
+
+2. If you run pseudocode nothing will happen because pseudocode is not actually code and is just brainstorming
+ and clarification.
+
+Programming Assistant
+
+1.
+Input first number
+Input second number
+if input1 is greater than input2
+  return input1
+else
+  return input2
+
+2.
+Loop 100 times
+  for each loop print current loop number
+
+3.
+Input entry to search for
+Input phonebook
+for each entry in phonebook
+  compare entry to entry being searched for
+
+4.
+const searchDirectory = (entry, phonebook) => {
+  for(i=0; i<phonebook.length; i++) {
+    if entry === phonebook[i] {
+      return phonebook[i];
+    }
+  }
+  return "entry not found";
+}
+
