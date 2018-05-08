@@ -1,8 +1,11 @@
 Questions
 
-1. Clean code is DRY, meaning it doesnt repeat itself, it also follows the proper formatting documentation, and contains functions that are only responsioble for one task. CLean code is also easy to read, and should not require comments to understand what its purpose is.
+1. Clean code is DRY, meaning it doesnt repeat itself, it also follows the proper formatting documentation, 
+and contains functions that are only responsioble for one task. CLean code is also easy to read, and should 
+not require comments to understand what its purpose is.
 
-2. Microwaves are a commonly used item that rely on computers. If the code is not put to acceptable standards, it is possible that it could become a hazard to the user, by runing when its not suppose to, or not runing at all.
+2. Microwaves are a commonly used item that rely on computers. If the code is not put to acceptable standards, 
+it is possible that it could become a hazard to the user, by runing when its not suppose to, or not runing at all.
 
 3.I would not consider the code to be clean code because the function is trying to perform multiple tasks.
 
@@ -24,7 +27,8 @@ FUNCTION convertFahrenheit(value)
   RETURN value * 1.8000 + 32.00
 END FUNCTION
 
-4. I would not consider this clean code, because there is too much spacing for the last PRINT call, and because print may run an error, if the "percentage" variable doesnt get set, thus it should be included in the IF.
+4. I would not consider this clean code, because there is too much spacing for the last PRINT call, and because 
+print may run an error, if the "percentage" variable doesnt get set, thus it should be included in the IF.
 
 FUNCTION calcPercent(sum, total)
   IF total != 0 THEN
@@ -146,3 +150,8 @@ const isAnagram = (word1, word2) => {
   }
 }
 
+git init
+git add --all
+git commit -m "first commit"
+
+git push -u origin master
