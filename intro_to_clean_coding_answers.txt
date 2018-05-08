@@ -1,0 +1,148 @@
+Questions
+
+1. Clean code is DRY, meaning it doesnt repeat itself, it also follows the proper formatting documentation, and contains functions that are only responsioble for one task. CLean code is also easy to read, and should not require comments to understand what its purpose is.
+
+2. Microwaves are a commonly used item that rely on computers. If the code is not put to acceptable standards, it is possible that it could become a hazard to the user, by runing when its not suppose to, or not runing at all.
+
+3.I would not consider the code to be clean code because the function is trying to perform multiple tasks.
+
+FUNCTION selectTempType(value, type) {
+  IF type == "F" 
+    print convertCelsius(value)
+  ELSE IF type == "C" 
+    print convertFahrenheit(value)
+  ELSE
+    print "invalid"
+  EMD IF
+END FUNCTION
+
+FUNCTION convertCelsius(value)
+  RETURN (value−32) * (5/9) 
+END FUNCTION
+
+FUNCTION convertFahrenheit(value)
+  RETURN value * 1.8000 + 32.00
+END FUNCTION
+
+4. I would not consider this clean code, because there is too much spacing for the last PRINT call, and because print may run an error, if the "percentage" variable doesnt get set, thus it should be included in the IF.
+
+FUNCTION calcPercent(sum, total)
+  IF total != 0 THEN
+    SET percentage to sum / total * 100
+    PRINT percentage
+  ELSE
+    PRINT "Sorry, cannot divide by 0"
+  END IF
+END FUNCTION
+
+5.
+a)
+
+FUNCTION checkOutCustomer(subTotal, discountRate, paymentType)
+  PRINT "Your total due is: " + subTotal * discountRate + (subTotal * tax)
+  PRINT CALL getCheckout WITH subTotal, discountRate, paymentType RETURNING checkout
+END FUNCTION
+
+FUNCTION getCheckout(subTotal, discountRate, paymentType)
+  IF paymentType = 'CASH' THEN
+    RETURN CALL getCashCheckout WITH subTotal, discountRate RETURNING cashCheckout
+  ELSE IF paymentType = 'CREDIT CARD' THEN
+    RETURN CALL getCreditCheckout WITH subTotal, discountRate RETURNING creditCheckout
+  END IF
+END FUNCTION
+
+FUNCTION getCashCheckout(subTotal, discountRate)
+  CALL getPayment RETURNING amount
+  RETURN "Change due: " + amount - subTotal * discountRate + (subTotal * tax)
+END FUNCTION
+
+FUNCTION getCreditCheckout(subTotal, discountRate)
+  CALL getPayment RETURNING amount
+  RETURN "Your credit card has been charged: " + subTotal * discountRate + (subTotal * tax)
+END FUNCTION
+
+b)
+
+FUNCTION checkoutBook(book, guest)
+  IF guest.accountActive AND NOT(guest.hasOverdueBooks) AND guest.outstandingFees = 0 THEN
+    APPEND book to guest.books
+    SET book.status to "Checked Out"
+    PRINT "Your books have been issued."
+  ELSE
+    PRINT "Unable to check out book."
+  END IF
+END FUNCTION
+
+c)
+
+CLASS BankAccount
+
+  FUNCTION displayBalance
+    PRINT balance
+  END FUNCTION
+
+  FUNCTION deposit(amount)
+    SET balance to balance + amount
+  END FUNCTION
+
+  FUNCTION withdraw(amount)
+    IF balance > amount THEN
+      SET balance to balance - amount
+    END
+  END FUNCTION
+
+  FUNCTION isCreditCard
+    IF NOT(customer.hasCreditCard) THEN
+      CALL offerCreditCard
+    END
+  END FUNCTION
+
+  FUNCTION isCheckingAccount
+    IF NOT(customer.hasCheckingAccount) THEN
+      CALL offerCheckingAccount
+    END
+  END FUNCTION
+
+  ....
+  ....
+  ....
+
+END
+
+Programming Questions - Javascript
+
+6) 
+const square = (xArray) => {
+  sum = xArray.reduce();
+  root = Math.sqrt(sum);
+  if root%1 === 0 {
+    return root;
+  }
+  else {
+    return sum;
+  }
+}
+
+7)
+const isDuplicates = (xArray) => {
+  for(i=0; i < xArray.length; i++) {
+    var duplicates = xArray.filter(value => value === xArray[i])
+    if(duplicates.length > 1) {
+      return true;
+    }
+  }
+  return false;
+}
+
+8.
+const isAnagram = (word1, word2) => {
+  test1 = word1.split("").sort().join("");
+  test2 = word2.split("").sort().join("");
+  if(test1 === test2) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
